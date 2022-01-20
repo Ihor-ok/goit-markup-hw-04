@@ -16,18 +16,44 @@
   --background-buttons-color: rgba(245, 244, 250, 1);
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .visually-hidden {
   position: absolute;
+  white-space: nowrap;
   width: 1px;
   height: 1px;
-  margin: -1px;
+  overflow: hidden;
   border: 0;
   padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
   clip: rect(0 0 0 0);
-  overflow: hidden;
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 body {
@@ -36,60 +62,25 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* ul обнуляємо маржени */
-
 .list {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* header */
-
-.header-nav {
-  display: flex;
-  align-items: center;
-}
-
-.heading {
-  background-color: var(--wite-color);
-  color: var(--primary-text-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  border-bottom: 1px solid #ececec;
-  /* width: 1600px; */
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  /* outline: 2px solid tomato; */
-  /* background-color: turquoise; */
-}
-
-/* убераємо підкреслення у посилань */
-
-.heading a {
-  text-decoration: none;
-  color: var(--primary-text-color);
-}
-
-/* прибираємо крапки у перелічуваннях */
-
-.heading ul {
   list-style: none;
 }
 
-/* main */
+.link {
+  text-decoration: none;
+}
 
-.logo {
+/* ----------------HEADER-------------------------- */
+
+.header {
+  background-color: var(--wite-color);
+  border-bottom: 1px solid #ececec;
+  /* height: 80px; */
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.header-logo {
   margin-right: 93px;
   color: var(--primary-text-color);
   font-family: "Raleway", sans-serif;
@@ -100,26 +91,35 @@ body {
   letter-spacing: 0.03em;
 }
 
-.logo:focus,
-.logo:hover {
+.header-logo:focus,
+.header-logo:hover {
   color: var(--accent-color);
 }
 
-.logo-web {
+.header-logo-web {
   color: var(--accent-color);
 }
 
-/* site-nav */
-.site-nav {
+.header a {
+  color: var(--primary-text-color);
+}
+
+.header-nav {
   display: flex;
-  padding-left: 0;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.site-nav .item + .item {
+.header-site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav .item + .item {
   margin-left: 50px;
 }
 
-.site-nav .site-nav a {
+.header-site-nav a {
   color: var(--primary-text-color);
 
   font-weight: 500;
@@ -128,30 +128,12 @@ body {
   letter-spacing: 0.02em;
 }
 
-.site-nav .stydio.current {
-  color: var(--accent-color);
-}
-.site-nav .portfolio.current {
-  color: var(--accent-color);
-}
-
-.nav:hover,
-.nav:focus {
-  color: var(--accent-color);
-}
-
-/* auth-nav */
-.auth-nav {
+.header-auth-nav {
   display: flex;
   margin-left: 331px;
-  padding-left: 0;
 }
 
-.auth-nav .item + .item {
-  margin-left: 50px;
-}
-
-.auth-nav a {
+.header-auth-nav a {
   color: var(--title-text-color);
 
   font-weight: 500;
@@ -160,19 +142,28 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* hero */
+.header-stydio.current {
+  color: var(--accent-color);
+}
+.header-portfolio.current {
+  color: var(--accent-color);
+}
+
+.nav:hover,
+.nav:focus {
+  color: var(--accent-color);
+}
+
+/* ----------------HERO-------------------------- */
+
 .hero {
   background-color: var(--background-hero-footer-color);
-  /* text-align: center; */
   padding-top: 200px;
   padding-bottom: 200px;
 }
 
 .hero-title {
   color: var(--wite-color);
-
-  /* background-color: violet; */
-
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -180,21 +171,11 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  /* display: block; */
   text-align: center;
-  width: 696px;
-  height: 120px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
 }
-
-.hero-button:hover,
-.hero-button:focus {
-  color: var(--primary-text-color);
-}
-
-/* button */
 
 .hero-button {
   background-color: var(--accent-color);
@@ -205,9 +186,6 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.8;
-  /* display: flex; */
-  /* align-items: center; */
-  /* text-align: center; */
   letter-spacing: 0.06em;
 
   display: block;
@@ -218,7 +196,12 @@ body {
   height: 50px;
 }
 
-/* features */
+.hero-button:hover,
+.hero-button:focus {
+  color: var(--primary-text-color);
+}
+
+/* ----------------FEATURES-------------------------- */
 
 .features {
   background-color: var(--background-features-work-color);
@@ -226,21 +209,20 @@ body {
   padding-bottom: 94px;
 }
 
-.features-item {
+.features-list {
   display: flex;
   justify-content: center;
-  /* padding-left: 0; */
 }
 
-.description-item {
+.features-description {
   min-width: 270px;
 }
 
-.features-item .item + .item {
+.features-list .item + .item {
   margin-left: 30px;
 }
 
-.features-title {
+.features-item {
   color: var(--primary-text-color);
 
   margin-top: 0px;
@@ -253,7 +235,7 @@ body {
   text-transform: uppercase;
 }
 
-.features-description-title {
+.features-title {
   color: var(--title-text-color);
   margin-top: 0;
   margin-bottom: 0;
@@ -264,7 +246,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* work */
+/* ----------------WORK-------------------------- */
 
 .work {
   background-color: var(--background-features-work-color);
@@ -292,7 +274,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* tiam */
+/* ----------------TIAM-------------------------- */
 
 .tiam {
   background-color: var(--background-team-color);
@@ -321,7 +303,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-.description-tiam {
+.tiam-description {
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -350,30 +332,22 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* footer */
+/* ----------------FOOTER-------------------------- */
 
-.page-footer {
+.footer {
   background-color: var(--background-hero-footer-color);
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
-.page-footer ul {
-  list-style: none;
-}
-
-.page-footer a {
-  text-decoration: none;
-}
-
-.address:hover,
-.address:focus,
+.footer-address-factual:hover,
+.footer-address-factual:focus,
 .footer-address:hover,
 .footer-address:focus {
   color: var(--accent-color);
 }
 
-.logo-footer {
+.footer-logo {
   display: block;
   color: var(--wite-color);
   margin-bottom: 20px;
@@ -385,12 +359,12 @@ body {
   letter-spacing: 0.03em;
 }
 
-.logo-footer:focus,
-.logo-footer:hover {
+.footer-logo:focus,
+.footer-logo:hover {
   color: var(--accent-color);
 }
 
-.logo-footer-web {
+.footer-logo-web {
   color: var(--accent-color);
 }
 
@@ -403,7 +377,7 @@ body {
   line-height: 1.7;
   letter-spacing: 0.03em;
 }
-.address {
+.footer-address-factual {
   color: var(--wite-color);
 
   font-style: normal;
@@ -413,32 +387,22 @@ body {
   letter-spacing: 0.03em;
 }
 
-.address-list {
-  padding-left: 0;
-}
-
-.addres-li {
+.addres-li:not(:last-child) {
   margin-bottom: 9px;
 }
 
-/* portfolio */
+/* ---------------- PORTFOLIO-------------------------- */
 
-.section {
+.portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-/* портфоліо фільтр */
-
-.mainly h1 {
-  margin-top: 0;
-  /* margin-bottom: 0; */
-}
+/* ---------------PORTFOLIO FILTER---------------------- */
 
 .filter {
   display: flex;
   justify-content: center;
-  /* padding-top: 0px; */
   margin-bottom: 50px;
 }
 
@@ -467,25 +431,22 @@ body {
   color: var(--wite-color);
   background-color: var(--accent-color);
 }
+/* ---------------PORTFOLIO PROJECTS---------------------- */
 
-/* портфоліо проекти */
-
-.list-portfolio {
+.portfolio-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.list-portfolio .item:not(:nth-child(3n + 1)) {
+.portfolio-list .item:not(:nth-child(3n + 1)) {
   margin-left: 30px;
-  /* border: 0px; */
 }
 
-.list-portfolio .item:nth-child(-n + 6) {
+.portfolio-list .item:nth-child(-n + 6) {
   margin-bottom: 30px;
-  /* border: 0px; */
 }
 
-.description {
+.portfolio-description {
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
@@ -497,7 +458,7 @@ body {
   display: block;
 }
 
-.projeck {
+.portfolio-projeck {
   color: var(--primary-text-color);
   margin-top: 0px;
   margin-bottom: 4px;
@@ -508,7 +469,7 @@ body {
   letter-spacing: 0.06em;
 }
 
-.projeck-title {
+.portfolio-projeck-title {
   color: var(--title-text-color);
   margin-top: 0;
   margin-bottom: 0;
@@ -516,9 +477,4 @@ body {
   font-size: 16px;
   line-height: 1.8;
   letter-spacing: 0.03em;
-}
-
-.mainly ul {
-  list-style: none;
-  padding-left: 0px;
 }
