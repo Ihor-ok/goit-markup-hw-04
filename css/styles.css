@@ -182,7 +182,15 @@ body {
 /* ----------------HERO-------------------------- */
 
 .hero {
-  background-color: var(--background-hero-footer-color);
+  max-width: 1600;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/img-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  block-size: cover;
   padding-top: 200px;
   padding-bottom: 200px;
 }
@@ -206,6 +214,9 @@ body {
   background-color: var(--accent-color);
   color: var(--wite-color);
   cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
 
   font-family: inherit;
   font-weight: 700;
@@ -219,6 +230,8 @@ body {
   margin-left: auto;
   width: 200px;
   height: 50px;
+  left: 700px;
+  top: 430px;
 }
 
 .hero-button:hover,
@@ -329,6 +342,19 @@ body {
 
 /* ----------------TIAM-------------------------- */
 
+.tiam-card {
+  width: 270px;
+  height: 428px;
+  left: 215px;
+  top: 1785px;
+
+  background: #ffffff;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
 .tiam {
   background-color: var(--background-team-color);
   padding-top: 94px;
@@ -410,9 +436,49 @@ body {
   fill: var(--title-text-color);
 }
 
-.tiam-social-link:hover {
+.tiam-social-link:hover,
+.tiam-social-link:focus {
   background-color: var(--accent-color);
   fill: var(--wite-color);
+}
+
+/* ----------------CUSTOMERS-------------------------- */
+
+.customers {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.customers-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+
+.customers-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customers-link {
+  width: 170px;
+  height: 92px;
+  border: 1px solid rgba(175, 177, 184, 1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: rgba(175, 177, 184, 1);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
 }
 
 /* ----------------FOOTER-------------------------- */
@@ -519,7 +585,8 @@ body {
   fill: var(--wite-color);
 }
 
-.invite-social-link:hover {
+.invite-social-link:hover,
+.invite-social-link:focus {
   background-color: var(--accent-color);
 }
 
@@ -542,13 +609,15 @@ body {
   margin-left: 8px;
 }
 
-.filter button {
+.filter-button {
   color: var(--primary-text-color);
   background-color: var(--background-buttons-color);
   cursor: pointer;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 6px 22px;
+  border: 0;
+  border-radius: 4px;
 
   font-family: inherit;
   font-weight: 500;
@@ -609,4 +678,17 @@ body {
   font-size: 16px;
   line-height: 1.8;
   letter-spacing: 0.03em;
+}
+
+.portfolio-card:hover {
+  /* position: absolute; */
+  width: 370px;
+  height: 404px;
+  left: 215px;
+  top: 262px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
